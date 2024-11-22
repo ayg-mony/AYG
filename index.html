@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYG - باقات الاستثمار</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1> مرحبآ بك في موقعنا</h1>
+        <p>اختر الباقة المناسبة واستثمر الآن</p>
+    </header>
+
+    <main>
+        <div class="packages">
+            <div class="package">
+                <h3>باقة 500 جنيه</h3>
+                <p>العائد اليومي: 125 جنيه</p>
+                <button onclick="openPaymentPopup(500, 125)">اشتراك</button>
+            </div>
+            <div class="package">
+                <h3>باقة 1000 جنيه</h3>
+                <p>العائد اليومي: 270 جنيه</p>
+                <button onclick="openPaymentPopup(1000, 270)">اشتراك</button>
+            </div>
+            <div class="package">
+                <h3>باقة 2500 جنيه</h3>
+                <p>العائد اليومي: 620 جنيه</p>
+                <button onclick="openPaymentPopup(2500, 620)">اشتراك</button>
+            </div>
+            <div class="package">
+                <h3>باقة 5000 جنيه</h3>
+                <p>العائد اليومي: 1370 جنيه</p>
+                <button onclick="openPaymentPopup(5000, 1370)">اشتراك</button>
+            </div>
+            <div class="package">
+                <h3>باقة 10000 جنيه</h3>
+                <p>العائد اليومي: 2800 جنيه</p>
+                <button onclick="openPaymentPopup(10000, 2800)">اشتراك</button>
+            </div>
+            <div class="package">
+                <h3>باقة 20000 جنيه</h3>
+                <p>العائد اليومي: 6150 جنيه</p>
+                <button onclick="openPaymentPopup(20000, 6150)">اشتراك</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- نافذة الدفع المنبثقة -->
+    <div id="paymentPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePaymentPopup()">&times;</span>
+            <h2>طريقة الدفع</h2>
+            <p class="instruction">يرجى تحويل الأموال باستخدام المعلومات أدناه:</p>
+
+            <!-- معلومات الدفع -->
+            <div class="payment-details">
+                <p><strong>رقم فودافون كاش:</strong></p>
+                <div class="wallet-number">
+                    <span id="walletNumber">01032092547</span>
+                    <button onclick="copyWalletNumber()">نسخ</button>
+                </div>
+                <p>المبلغ: <input type="number" id="paymentAmount" readonly> جنيه</p>
+                <p>اكتب رقمك الذي أرسلت منه:</p>
+                <input type="text" maxlength="11" placeholder="رقم الهاتف">
+            </div>
+
+            <!-- تحميل صورة -->
+            <div class="upload-section">
+                <p>قم بتحميل صورة عملية التحويل:</p>
+                <input type="file" accept="image/*">
+            </div>
+
+            <!-- زر التأكيد -->
+            <button class="confirm-button" onclick="submitPayment()">التأكيد</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
